@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gke-deploy-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gke-deploy
+  template:
+    metadata:
+      labels:
+        app: gke-deploy
+    spec:
+      containers:
+        - name: gke-deploy
+          image: tobecvs/gcp-private:v0.0.1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+      terminationGracePeriodSeconds: 30
