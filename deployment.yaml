@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gke-deploy
-          image: tobecvs/gcp-private:v0.0.1
+          image: us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
