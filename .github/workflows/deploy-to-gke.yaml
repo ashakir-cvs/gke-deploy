@@ -9,7 +9,8 @@ permissions:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on:
+      group: cvs-linux-self-hosted
 
     steps:
       #########    Build Java Jar    #########
