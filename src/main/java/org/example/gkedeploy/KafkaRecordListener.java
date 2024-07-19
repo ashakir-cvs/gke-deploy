@@ -17,6 +17,6 @@ public class KafkaRecordListener {
     @KafkaListener(topics = "topic_01")
     public void consumeKafkaMessage(String message) {
         log.warn(message);
-        log.debug(username);
+        log.warn(username);
     }
 }
