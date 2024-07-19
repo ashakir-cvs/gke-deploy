@@ -55,6 +55,7 @@ jobs:
       - name: Deploy to GKE
         run: |
           gcloud container clusters get-credentials first-solo-java-deploy --region us-central1
+          docker pull tobecvs/gcp-private:v0.0.1
           kubectl apply -f deployment.yaml
           kubectl apply -f service.yaml
 
