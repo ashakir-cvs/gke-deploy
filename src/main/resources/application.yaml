@@ -1,5 +1,7 @@
 # Kafka Setting to Access Confluent Topics
 spring:
+  application:
+    name: gke-deploy
   kafka:
     bootstrap-servers: pkc-619z3.us-east1.gcp.confluent.cloud:9092
     consumer:
