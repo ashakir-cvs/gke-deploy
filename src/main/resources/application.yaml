@@ -5,7 +5,7 @@ spring:
   kafka:
     bootstrap-servers: pkc-619z3.us-east1.gcp.confluent.cloud:9092
     consumer:
-      group-id: local-19-01
+      group-id: local-19-03
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       auto-offset-reset: earliest

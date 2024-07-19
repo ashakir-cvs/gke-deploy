@@ -15,15 +15,15 @@ jobs:
       #### Build Java Jar
       - name: Checkout sources
         uses: actions/checkout@v4
-#
-#      - name: Setup Gradle
-#        uses: actions/setup-java@v4
-#        with:
-#          distribution: temurin
-#          java-version: 17
-#
-#      - name: Build with Gradle
-#        run: ./gradlew build
+
+      - name: Setup Gradle
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Build with Gradle
+        run: ./gradlew build
 
       #########    Access GCP    #########
       - name: Authenticate with GCP
@@ -38,11 +38,11 @@ jobs:
           install_components: gke-gcloud-auth-plugin
 
       #########    Build and Push Image    #########
-#      - name: Build and Push Docker Image
-#        run: |
-#          gcloud auth configure-docker us-central1-docker.pkg.dev
-#          docker build -t us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:latest .
-#          docker push us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:latest
+      - name: Build and Push Docker Image
+        run: |
+          gcloud auth configure-docker us-central1-docker.pkg.dev
+          docker build -t us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:latest .
+          docker push us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:latest
 
       #########    Deploy Image    #########
       - name: Deploy to GKE
@@ -50,7 +50,7 @@ jobs:
           gcloud container clusters get-credentials first-solo-java-deploy --region us-central1
           kubectl apply -f service-account.yaml
           kubectl apply -f secret-provider.yaml
-#          kubectl apply -f service.yaml
-#          kubectl apply -f deployment.yaml
+          kubectl apply -f service.yaml
+          kubectl apply -f deployment.yaml
 
 

@@ -1,0 +1,1 @@
+# Setup Deployment To Retrieve Secrets Using Google Secret Manager Add-on
