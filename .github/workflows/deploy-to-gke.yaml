@@ -49,6 +49,7 @@ jobs:
         run: |
           gcloud container clusters get-credentials first-solo-java-deploy --region us-central1
           kubectl apply -f service-account.yaml
+          kubectl apply -f secret-provider.yaml
 #          kubectl apply -f service.yaml
 #          kubectl apply -f deployment.yaml
 
