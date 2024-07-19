@@ -16,8 +16,12 @@ spec:
         - name: gke-deploy-deployment
           image: us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:latest
           imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: 100m
           ports:
             - containerPort: 80
+          tty: true
           volumeMounts:
             - mountPath: "/var/secrets"
               name: confluent

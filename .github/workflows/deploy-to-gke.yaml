@@ -12,18 +12,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      #### Build Java Jar
       - name: Checkout sources
         uses: actions/checkout@v4
 
-      - name: Setup Gradle
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 17
-
-      - name: Build with Gradle
-        run: ./gradlew build
+      #### Build Java Jar
+#      - name: Setup Gradle
+#        uses: actions/setup-java@v4
+#        with:
+#          distribution: temurin
+#          java-version: 17
+#
+#      - name: Build with Gradle
+#        run: ./gradlew build
 
       #########    Access GCP    #########
       - name: Authenticate with GCP
@@ -41,8 +41,8 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           gcloud auth configure-docker us-central1-docker.pkg.dev
-          docker build -t us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:latest .
-          docker push us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:latest
+#          docker build -t us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:latest .
+#          docker push us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:latest
 
       #########    Deploy Image    #########
       - name: Deploy to GKE
