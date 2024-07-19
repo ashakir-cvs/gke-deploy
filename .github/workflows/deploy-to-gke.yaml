@@ -54,9 +54,10 @@ jobs:
       - name: Use gcloud CLI
         run: gcloud info
 
-#      - name: Verify GKE Extentions
-#        run: |
-
+      - name: Verify GKE Extensions
+        run: |
+          kubectl version --client
+          gke-gcloud-auth-plugin --version
 #########    Deploy Image    #########
 #      - name: Get GKE Credentials
 #        uses: google-github-actions/get-gke-credentials@v2
