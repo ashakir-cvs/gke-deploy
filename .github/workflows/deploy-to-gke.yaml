@@ -53,7 +53,7 @@ jobs:
 #          install_components: gke-gcloud-auth-plugin
 
       - name: Validate GKE Extensions
-        runs: gcloud components list
+        run: gcloud components list
 
 #########    Deploy Image    #########
 #      - name: Get GKE Credentials
