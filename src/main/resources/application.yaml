@@ -5,7 +5,7 @@ spring:
   kafka:
     bootstrap-servers: pkc-619z3.us-east1.gcp.confluent.cloud:9092
     consumer:
-      group-id: local-19-03
+      group-id: local-19-04
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       auto-offset-reset: earliest
@@ -19,3 +19,5 @@ spring:
         mechanism: PLAIN
         jaas:
           config: org.apache.kafka.common.security.plain.PlainLoginModule required username='BSPSKHZURXWP2DC3' password='XwHuXZHBcbhVWiB5Y/jaoEIWYx3z+fXuFcz+Yxhgua0N69wFhu3TtdW9xwsUnOAW';
+
+username: ${ssoe-testing-username:failed}
