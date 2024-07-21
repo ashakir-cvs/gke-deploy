@@ -3,7 +3,7 @@ spring:
   application:
     name: gke-deploy
   config:
-    import: configtree:/var/config
+    import: configtree:/var/config/
   kafka:
     bootstrap-servers: pkc-619z3.us-east1.gcp.confluent.cloud:9092
     consumer:
