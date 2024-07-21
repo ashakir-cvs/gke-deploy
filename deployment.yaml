@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
         - name: gke-deploy-deployment
-          image: us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:0.1.3
+          image: us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:0.1.4
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
           tty: true
           volumeMounts:
-            - mountPath: /var/config
+            - mountPath: /var/config/secrets
               name: confluent
       serviceAccountName: deployment-access-secret
       terminationGracePeriodSeconds: 30
