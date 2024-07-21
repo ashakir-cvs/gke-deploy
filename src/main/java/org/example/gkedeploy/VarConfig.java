@@ -8,5 +8,5 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "secrets")
 public class VarConfig {
-    String secretJson;
+    Object secretJson;
 }

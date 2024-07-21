@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gke-deploy-deployment
-          image: us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:0.1.4
+          image: us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:0.1.5
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

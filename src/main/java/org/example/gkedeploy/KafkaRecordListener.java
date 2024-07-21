@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 @NoArgsConstructor
 public class KafkaRecordListener {
 
-    VarConfig varConfig;
+    Object varConfig;
 
     @KafkaListener(topics = "topic_01")
     public void consumeKafkaMessage(String message) {
         log.warn(message);
-        log.warn(varConfig.getSecretJson());
+        log.warn(varConfig.toString());
     }
 }
