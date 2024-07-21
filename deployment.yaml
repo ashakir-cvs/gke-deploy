@@ -14,16 +14,13 @@ spec:
     spec:
       containers:
         - name: gke-deploy-deployment
-          env:
-            - name: PASSWORD
-              value: file:/var/secret/password.txt
           image: us-central1-docker.pkg.dev/gcp-auth-425322/first-deploy/gke-deploy:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
           tty: true
           volumeMounts:
-            - mountPath: /var/secrets
+            - mountPath: /var/config
               name: confluent
       serviceAccountName: deployment-access-secret
       terminationGracePeriodSeconds: 30
