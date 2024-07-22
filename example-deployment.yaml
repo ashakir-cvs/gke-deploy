@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ DEPLOYMENT_NAME }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ APP_NAME }}
+  template:
+    metadata:
+      labels:
+        app: {{ APP_NAME }}
+    spec:
+      containers:
+        - name: {{ CONTAINER_NAME }}
+          image: {{ FULL_IMAGE_NAME }}:{{ VERISON }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /var/config
+              name: {{ VOLUME_NAME }}
+      serviceAccountName: {{ KUBERNETES_SERVICE_ACCOUNT }}
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - name: {{ VOLUME_NAME }}
+          csi:
+            driver: secrets-store-gke.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: {{ SECERT_PROVIDER_NAME }}

@@ -41,6 +41,8 @@ Current implementation allows deployment to retrieve ***multiple*** `value only`
 ### End User
 - Install Secret Manager Add-on in Deployment Cluster
   - https://cloud.google.com/secret-manager/docs/secret-manager-managed-csi-component#install-managed-CSI-component
+  - New Cluster: https://cloud.google.com/secret-manager/docs/secret-manager-managed-csi-component#enable-component-new-cluster
+  - Existing Cluster: https://cloud.google.com/secret-manager/docs/secret-manager-managed-csi-component#enable-component-existing-cluster
 - Allow Kubernetes Service Account to impersonate GCP IAM Service Account
   - [Link Kubernetes Service Account to IAM](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity#kubernetes-sa-to-iam)
 - Deploy Secret Provider, Service Account and Application Deployment YAMLs
