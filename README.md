@@ -34,22 +34,18 @@ Current implementation allows deployment to retrieve ***multiple*** `value only`
 
 ## What's Needed To Get Working 
 
-### Cluster/Project Housing Secret
-- Install Secret Manager Add-on in Cluster
-  - https://cloud.google.com/secret-manager/docs/secret-manager-managed-csi-component#install-managed-CSI-component
-
-
 ### Automation 
 - Assign Secret Accessor Role to GCP IAM Service Account
 
 ### End User
+- Install Secret Manager Add-on in Deployment Cluster
+  - https://cloud.google.com/secret-manager/docs/secret-manager-managed-csi-component#install-managed-CSI-component
 - Allow Kubernetes Service Account to impersonate GCP IAM Service Account
   - [Link Kubernetes Service Account to IAM](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity#kubernetes-sa-to-iam)
-- Deploy Secret Provider, Service Account and Application Deployment 
+- Deploy Secret Provider, Service Account and Application Deployment YAMLs
 - Reference secrets in application using `path` value from Secret Provider YAML
 
 #### TODO
 - Test usability with roles assigned GKE Service Accounts
   - Update Service account documentation
 - Test method of parsing json object or multi line secrets
-- Validate which cluster add-on needs to be installed to

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gke-deploy-deployment
+  name: confluent-deployment
 spec:
   replicas: 1
   selector:
@@ -13,20 +13,20 @@ spec:
         app: gke-deploy
     spec:
       containers:
-        - name: gke-deploy-deployment
+        - name: confluent-deployment
           image: us-central1-docker.pkg.dev/secret-retrieval-deployment/deployment-cluster/gke-deploy:0.1.6
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
           volumeMounts:
             - mountPath: /var/config
-              name: confluent
-      serviceAccountName: deployment-access-secret
+              name: confluent-vars
+      serviceAccountName: kube-deployment-account
       terminationGracePeriodSeconds: 30
       volumes:
-        - name: confluent
+        - name: confluent-vars
           csi:
             driver: secrets-store-gke.csi.k8s.io
             readOnly: true
             volumeAttributes:
-              secretProviderClass: confluent-secret
+              secretProviderClass: confluent-credentials
