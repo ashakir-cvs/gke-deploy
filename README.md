@@ -14,8 +14,9 @@ Current implementation allows deployment to retrieve ***multiple*** `value only`
 - `secretProviderClass` refers to the Secret Provider that will retrieve the secrets
 
 ### [Kubernetes Service Account Yaml](service-account.yaml)
-- Service account with [Secret Manager Secret Accessor](https://cloud.google.com/secret-manager/docs/access-control#secretmanager.secretAccessor) role assigned
 - `name` value referenced as `serviceAccountName` in [Deployment](deployment.yaml)
+- `iam.gke.io/gcp-service-account` GCP Service account with [Secret Manager Secret Accessor](https://cloud.google.com/secret-manager/docs/access-control#secretmanager.secretAccessor) role assigned
+  - Kubernetes Service Account requires Workload Identity User role for GCP service account  
 
 ### [Secret Provider Yaml](secret-provider.yaml)
 - `name` value referenced as `secretProviderClass` in [Deployment](deployment.yaml)
@@ -46,6 +47,4 @@ Current implementation allows deployment to retrieve ***multiple*** `value only`
 - Reference secrets in application using `path` value from Secret Provider YAML
 
 #### TODO
-- Test usability with roles assigned GKE Service Accounts
-  - Update Service account documentation
 - Test method of parsing json object or multi line secrets
