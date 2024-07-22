@@ -20,4 +20,4 @@ spring:
       sasl:
         mechanism: PLAIN
         jaas:
-          config: org.apache.kafka.common.security.plain.PlainLoginModule required username='${secrets.CONFLUENT-USERNAME}' password='${secrets.CONFLUENT-PASSWORD}';
+          config: org.apache.kafka.common.security.plain.PlainLoginModule required username='${CONFLUENT-USERNAME}' password='${CONFLUENT-PASSWORD}';
