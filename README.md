@@ -44,6 +44,7 @@ Current implementation allows deployment to retrieve ***multiple*** `value only`
 - Allow Kubernetes Service Account to impersonate GCP IAM Service Account
   - [Link Kubernetes Service Account to IAM](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity#kubernetes-sa-to-iam)
 - Deploy Secret Provider, Service Account and Application Deployment YAMLs
+- Add `spring.config.import` to application.yaml
 - Reference secrets in application using `path` value from Secret Provider YAML
 
 #### TODO
