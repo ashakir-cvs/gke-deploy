@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: confluent-deployment
-          image: us-central1-docker.pkg.dev/secret-retrieval-deployment/deployment-cluster/gke-deploy:0.1.6
+          image: us-central1-docker.pkg.dev/secret-retrieval-deployment/sm-deployments/gke-deploy:0.1.6
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

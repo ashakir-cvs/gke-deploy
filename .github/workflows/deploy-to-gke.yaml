@@ -11,7 +11,7 @@ env:
   PROJECT_ID: secret-retrieval-deployment
   CLUSTER_ID: deployment-cluster
   REGION: us-central1
-  ARTIFACT_REPO: deployment-cluster
+  ARTIFACT_REPO: sm-deployments
   IMAGE: gke-deploy
   VERSION: 0.1.6
 
