@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 env:
-  PROJECT_ID: secret-retrieval-deployment
+  PROJECT_ID: confluent-kafka-app
   CLUSTER_ID: deployment-cluster
   REGION: us-central1
   ARTIFACT_REPO: sm-deployments
