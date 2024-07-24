@@ -58,7 +58,7 @@ jobs:
       ##### Deploy
       - name: Deploy to GKE
         run: |
-          gcloud container clusters get-credentials $CLUSTER_ID --region $REGION --project $PROJECT_ID
+          gcloud container clusters get-credentials $CLUSTER_ID --region $REGION
           kubectl apply -f service-account.yaml
           kubectl apply -f secret-provider.yaml
           kubectl apply -f deployment.yaml
