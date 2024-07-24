@@ -5,7 +5,7 @@ spring:
   config:
     import: configtree:/var/config/
   kafka:
-    bootstrap-servers: pkc-619z3.us-east1.gcp.confluent.cloud:9092
+    bootstrap-servers: pkc-q8pdd.us-east4.gcp.confluent.cloud:9092
     consumer:
       group-id: local-22-01
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
