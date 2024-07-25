@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: confluent-deployment
-          image: us-central1-docker.pkg.dev/confluent-kafka-app/sm-deployments/gke-deploy:0.1.6
+          image: us-central1-docker.pkg.dev/confluent-kafka-app/sm-deployments/gke-deploy:0.1.8
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @NoArgsConstructor
 public class KafkaRecordListener {
 
-    @KafkaListener(topics = "test_11")
+    @KafkaListener(topics = "test11")
     public void consumeKafkaMessage(String message) {
         log.warn(message);
     }
